@@ -26,13 +26,13 @@ class _SlidersState extends State<Sliders> {
     return xColumnCC.list(
       [
         10.0.sizedHeight(),
-        'Size Adjust'.toUpperCase().xTextColorWhite().toCenter(),
-        Divider(
+        'Font Size'.xTextColorBlack().toCenter(),
+        /*Divider(
 
             // height: 1,
-            ),
+            ),*/
         Slider(
-            activeColor: Colors.white,
+            activeColor: Colors.black,
             inactiveColor: Colors.grey,
             value: widgetJson[widget.index]['size'],
             min: 0.0,
@@ -51,9 +51,9 @@ class _SlidersState extends State<Sliders> {
             }),
         10.0.sizedHeight(),
         xColumn.list([
-          20.0.sizedHeight(),
-          'Slider Color'.text(),
-          //   10.0.sizedHeight(),
+          //20.0.sizedHeight(),
+          'Text Color'.text().toCenter(),
+          10.0.sizedHeight(),
           xRowCC.list([
             BarColorPicker(
                 width: 300,
@@ -64,11 +64,11 @@ class _SlidersState extends State<Sliders> {
                   setState(() {
                     widgetJson[widget.index]['color'] = Color(value);
                   });
-                }).xExpanded(),
-            'Reset'.text().xFlatButton(onPressed: () {})
-          ]),
-          //   20.0.sizedHeight(),
-          'Slider White Black Color'.text(),
+                }),
+            //'Reset'.text().xFlatButton(onPressed: () {})
+          ]).xExpanded(),
+          20.0.sizedHeight(),
+          /*'Slider White Black Color'.text(),
           //   10.0.sizedHeight(),
           xRowCC.list([
             BarColorPicker(
@@ -81,9 +81,9 @@ class _SlidersState extends State<Sliders> {
                     widgetJson[widget.index]['color'] = Color(value);
                   });
                 }).xExpanded(),
-            'Reset'.text().xFlatButton(onPressed: () {})
-          ]),
-        ]).xContainer(color: Colors.white, rounded: 10),
+            //'Reset'.text().xFlatButton(onPressed: () {})
+          ])*/
+        ]).xExpanded(),//.xContainer(color: Colors.white, rounded: 10),
         10.0.sizedHeight(),
         xRow.list([
           'Remove'
@@ -96,11 +96,11 @@ class _SlidersState extends State<Sliders> {
                     // setState(() {});
                   })
               .xExpanded()
-        ]),
+        ]).xExpanded(),
       ],
     ).xContainer(
-      color: Colors.black87,
-      height: 350,
+      color: Colors.white,
+      height: 240,
       borderRadius: BorderRadius.only(
           topRight: Radius.circular(10), topLeft: Radius.circular(10)),
     );

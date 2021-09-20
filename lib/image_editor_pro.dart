@@ -253,7 +253,7 @@ class _ImageEditorProState extends State<ImageEditorPro> {
         key: scaf,
         appBar: AppBar(
           actions: <Widget>[
-            Icon(FontAwesomeIcons.boxes).xIconButton(onPressed: () {
+            /*Icon(FontAwesomeIcons.boxes).xIconButton(onPressed: () {
               showCupertinoDialog(
                   context: context,
                   builder: (context) {
@@ -297,14 +297,16 @@ class _ImageEditorProState extends State<ImageEditorPro> {
                       ),
                     );
                   });
-            }),
-            Icon(Icons.clear).xIconButton(onPressed: () {
+            }),*/
+            'Clear'.text().xFlatButton(
+              primary: Colors.white,
+              onPressed: () {
               _controller.points.clear();
               setState(() {});
             }),
-            Icon(Icons.camera_alt).xIconButton(onPressed: () {
+            /*Icon(Icons.camera_alt).xIconButton(onPressed: () {
               bottomsheets();
-            }),
+            }),*/
             'Save'.text().xFlatButton(
                 primary: Colors.white,
                 onPressed: () {

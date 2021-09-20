@@ -19,6 +19,7 @@ class _TextEditorImageState extends State<TextEditorImage> {
         .list([
           TextField(
             controller: name,
+            textInputAction: TextInputAction.done,
             decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.all(10),
@@ -28,17 +29,17 @@ class _TextEditorImageState extends State<TextEditorImage> {
             ),
             scrollPadding: EdgeInsets.all(20.0),
             keyboardType: TextInputType.multiline,
-            minLines: 5,
-            maxLines: 99999,
+            minLines: 2,
+            maxLines: 5,
             style: TextStyle(
               color: Colors.white,
             ),
             autofocus: true,
-          ).toContainer(height: xheight(context) / 2.2),
+          ).toContainer(height: xheight(context) / 3),
           xColumnCC.list([
             //   20.0.sizedHeight(),
-            'Slider Color'.text(),
-            //   10.0.sizedHeight(),
+            'Text Color'.text(),
+            10.0.sizedHeight(),
             xRowCC.list([
               BarColorPicker(
                   width: 300,
@@ -49,11 +50,11 @@ class _TextEditorImageState extends State<TextEditorImage> {
                     setState(() {
                       currentColor = Color(value);
                     });
-                  }).xExpanded(),
-              'Reset'.text().xFlatButton(onPressed: () {})
+                  }).toCenter().xExpanded(),
+              //'Reset'.text().xFlatButton(onPressed: () {})
             ]),
             //   20.0.sizedHeight(),
-            'Slider White Black Color'.text(),
+            /*'Slider White Black Color'.text(),
             //   10.0.sizedHeight(),
             xRowCC.list([
               BarColorPicker(
@@ -67,11 +68,11 @@ class _TextEditorImageState extends State<TextEditorImage> {
                     });
                   }).xExpanded(),
               'Reset'.text().xFlatButton(onPressed: () {})
-            ]),
+            ]),*/
             xColumn.list([
               10.0.sizedHeight(),
-              'Size Adjust'.toUpperCase().xTextColorWhite().toCenter(),
-              10.0.sizedHeight(),
+              'Font Size'.xTextColorBlack().toCenter(),
+              //10.0.sizedHeight(),
               Slider(
                   activeColor: Colors.white,
                   inactiveColor: Colors.grey,
@@ -88,14 +89,14 @@ class _TextEditorImageState extends State<TextEditorImage> {
                       slider = v;
                     });
                   }),
-            ]).toContainer(color: Colors.black)
+            ]).toContainer(color: Colors.white)
           ]).xContainer(color: Colors.white),
         ])
         .xSingleChildScroolView()
         .xCenter()
         .xScaffold(
           backgroundColor: Colors.black,
-          appBar: AppBar(
+          /*appBar: AppBar(
             backgroundColor: Colors.black,
             actions: <Widget>[
               align == TextAlign.left
@@ -146,7 +147,7 @@ class _TextEditorImageState extends State<TextEditorImage> {
                       });
                     }),
             ],
-          ),
+          ),*/
           bottomNavigationBar: 'Add Text'
               .xTextColorWhite(
                 fontWeight: FontWeight.bold,
@@ -167,7 +168,7 @@ class _TextEditorImageState extends State<TextEditorImage> {
                     borderRadius: BorderRadius.circular(10)),
               )
               .xContainer(
-                color: Colors.white,
+                color: Colors.black,
               ),
         );
   }
